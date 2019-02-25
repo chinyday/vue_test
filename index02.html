@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Vue js 테스트</title>
+    </head>
+    <body>
+        <!-- 
+            Directive (지시문)
+
+            v-text 
+            v-html 
+            가끔씩은 html 을 렌더링 해야 할 때도 있습니다. 그럴 땐, “여기서 렌더링 할 건 html 형식이야” 라는걸 지정하기 위해서 v-html 이라는 디렉티브를 사용 이렇게 v-html 을 사용하는 경우엔, 서버측에서
+            불필요한 부분은 필터링하게 할 것, 꼭 명심하세요! 잘못하면 XSS 나 불필요한 악성 태그가 렌더링 될 수도 있으니까요.
+
+
+            v-show 
+            Console 을 열어서 app.visible = false 라고 입력하면 사라지고, app.visible = true 라고 입력하면 생긴다
+            
+
+            v-if 
+            v-else 
+            v-else-if 
+            변수명 대신에 조건문을 씁니다 (변수명을 입력해도 작동하긴 합니다)
+            
+
+            v-pre 
+            특정 엘리먼트를 무시하는데에 사용
+            
+
+            v-cloak 
+            Vue 인스턴스가 제대로 준비되기 전까지 템플렛을 위한 HTML 코드를 숨기고 싶을 때 이 v-cloak 이라는 디렉티브를 사용 attribute 가 있는 경우 display: none 스타일을 적용해야 비로소 숨겨진다.
+            [v-cloak] { display: none; }
+
+
+            v-once
+            컴포넌트를 초기에 딱 한번만 렌더링합니다. 즉, 자바스크립트에서 사용하는 데이터를 사용하긴하는데, 변동이 없고 한결같은 정적인 부분을 보여줄 떄 사용
+
+         -->
+        <div id="app" v-cloak>
+            
+            <h1>hello , <span v-html='name'></span></h1>
+            <h1>hello , <span v-text='name'></span></h1>
+            
+            <h1>hello , <span v-show="visible" v-text='show'></span></h1>
+            
+            <h1 v-if='value > 5'>value가 5보다 크군요!</h1>
+            <h1 v-else-if="value === 5">값이 5네요</h1>
+            <h1 v-else>value가 5보다 작아요!</h1>
+            
+            <h1 v-pre>{{ 이건 그대로 렌더링해줘요 }}</h1>
+            
+            <h2 v-once>초기 값: {{ value }}</h2>
+            <h2>현재 값: {{ value }}</h2>
+
+        </div>
+        <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el : '#app',
+                data : {
+                    name : '<i>이탤릭</i>',
+                    show: '<i>이탤릭</i>',
+                    visible: true,
+                    value:0
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Vue js 테스트</title>
+    </head>
+    <body>
+        <!--     
+            데이터에 변화를 주는 방법 중 하나인 v-model 디렉티브
+
+
+            ** 단 방향 바인딩
+            데이터 → 뷰 의 형태로 바인딩이 되어있어서, 데이터의 값이 변하면 바로 바로 업데이트가 되는데 이게 단 방향 바인딩
+
+            ** 양 방향 바인딩
+            뷰 ⇄ 데이터 형태로 바인딩하여 데이터가 양 방향으로 흐르게 해주는 것
+            v-model 디렉티브는 이렇게 폼에 관련된 태그에만 사용 될 수 있음 => <input>, <select>, <textarea>
+
+
+
+            index03-1 과 이어서 보면 이해가 됨.
+
+        -->
+        <div id="app">
+            <h2>{{name}}</h2>
+            <input type="text" v-model="name">
+            
+        </div>
+        <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el : '#app',
+                data : {
+                   name :'hehe'
+                }
+            });
+        </script>
+    </body>
+</html>

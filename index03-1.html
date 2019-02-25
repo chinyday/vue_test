@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Vue js 테스트</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>hello , {{name}}</h1>
+                
+            <h3>
+                <input type="checkbox" v-model="smile">이미지 바꾸기
+            </h3>
+            <img :src="smile ? img1 : img2">
+            
+
+        </div>
+        <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el : '#app',
+                data : {
+                    name : 'hehe',
+                    smile: true,
+                    img :'../img/img.jpg',
+                    img1 :'../img/img01.jpg',
+                    img2 :'../img/img02.jpg'
+                }
+            });
+        </script>
+    </body>
+</html>
