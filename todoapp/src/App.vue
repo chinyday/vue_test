@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TodoHeader></TodoHeader> 
+    <TodoInput></TodoInput>
+    <TodoList></TodoList>
+    <Todofooter></Todofooter>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoHeader from './components/TodoHeader.vue'
+import TodoInput from './components/TodoInput.vue'
+import TodoList from './components/TodoList.vue'
+import Todofooter from './components/Todofooter.vue'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    // '탬플릿에 연결해 줄 컴포넌트 태그명 ' :  스크립트로 연결한 컴포넌트 내용
+    'TodoHeader' : TodoHeader,
+    'TodoInput' : TodoInput,
+    'TodoList' : TodoList,
+    'Todofooter' : Todofooter
   }
 }
 </script>
@@ -24,5 +32,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  width: 500px;
+  margin: 0 auto;
+  background-color: #f1f1f1;
 }
 </style>
