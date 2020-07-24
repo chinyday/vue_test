@@ -1,5 +1,5 @@
 <template>
-<div>header</div>
+    <footer>Clrea All</footer>
 </template>
 
 <script>
