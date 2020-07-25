@@ -1,10 +1,10 @@
 <template>
     <div class="listWrap">
         <ul>
-            <li class="shadow" v-for="i in dataList" v-bind:key="i">
+            <li class="shadow" v-for="(text, index) in dataList" v-bind:key="text">
                 <i class="fa fa-check check" aria-hidden="true"></i>
-                {{ i }}
-                <i class="fa fa-trash trash" aria-hidden="true"></i>
+                {{ text }}
+                <i class="fa fa-trash trash" aria-hidden="true" v-on:click="removeTodoText(text, index)"></i>
             </li>
         </ul>
     </div>
@@ -15,6 +15,12 @@ export default {
     data : function(){
         return {
             dataList : []
+        }
+    },
+    methods : {
+        removeTodoText : function(text, index){
+            if (index > -1) this.dataList.splice(index,1); 
+            localStorage.removeItem(text); 
         }
     },
     created : function() {  
