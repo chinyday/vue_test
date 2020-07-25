@@ -34,6 +34,7 @@ export default {
   margin-top: 60px;
   width: 500px;
   margin: 0 auto;
+  padding: 10px 0 30px; 
   background-color: #f1f1f1;
 }
 </style>
