@@ -16,9 +16,9 @@ export default {
     },
     methods : {
         addTodoText:function(){
-            localStorage.setItem(this.inputItemes,this.inputItemes);
+            var item = {complete : false, text : this.inputItemes}
+            localStorage.setItem(this.inputItemes,JSON.stringify(item));
             this.inputItemes = '';
-            
         }
     }
 }
